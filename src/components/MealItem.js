@@ -1,8 +1,11 @@
+import React from "react";
+import "../index.css";
+
 const MealItem = (props) => {
     return (
-        <li>
+        <li className="meal-item">
             <article>
-                <img src={require(`../assets/${props.meal.image}`)} alt={props.meal.name}/>
+                <img src={require(`../assets/${props.meal.image}`)} alt={props.meal.name} />
                 <div>
                     <h3>{props.meal.name}</h3>
                     <p>props.meal.price</p>
@@ -13,7 +16,7 @@ const MealItem = (props) => {
                 </p>
             </article>
         </li>
-        
+
     )
 }
 
