@@ -1,5 +1,6 @@
 import React from "react";
 import "../index.css";
+import Button from "./UI/Button.js";
 
 const MealItem = (props) => {
 
@@ -18,7 +19,9 @@ const MealItem = (props) => {
                     <p>{props.meal.description}</p>
                 </div>
                 <p>
-                    <button >Add to Cart</button>
+                    <Button textOnly={false}>
+                        Add to Cart
+                    </Button>
                 </p>
             </article>
         </li>
