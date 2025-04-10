@@ -1,7 +1,7 @@
 import React from "react";
 import "../index.css";
 import Button from "./UI/Button.js";
-import { useCart } from "../store/CartContext"
+import { useCart } from "../store/CartContext";
 
 const MealItem = (props) => {
     const { addItem } = useCart();
@@ -12,8 +12,8 @@ const MealItem = (props) => {
     }).format(props.meal.price);
 
     const addToCartHandler = () => {
-        addItem(props.meal);
-    }
+        addItem({ ...props.meal, id: props.meal.id || props.meal.name });
+    };
 
     return (
         <li className="meal-item">
@@ -31,8 +31,7 @@ const MealItem = (props) => {
                 </p>
             </article>
         </li>
-
     )
 }
 
-export default MealItem
+export default MealItem;

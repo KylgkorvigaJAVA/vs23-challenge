@@ -1,11 +1,13 @@
-import React from 'react'
-import logo from '../assets/logo.jpg'
-import "../index.css"
-import Button from "./UI/Button.js"
-import { useCart } from "../store/CartContext"
+import React from 'react';
+import logo from '../assets/logo.jpg';
+import "../index.css";
+import Button from "./UI/Button.js";
+import { useCart } from "../store/CartContext";
 
 const Header = () => {
     const { cartItems } = useCart();
+
+    const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
 
     return (
         <header id="main-header">
@@ -15,7 +17,7 @@ const Header = () => {
             </div>
             <nav>
                 <Button textOnly={true}>
-                    Cart ({cartItems.length})
+                    Cart ({totalQuantity})
                 </Button>
             </nav>
         </header>
