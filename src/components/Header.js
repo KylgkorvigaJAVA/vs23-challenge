@@ -1,9 +1,11 @@
 import React from 'react'
 import logo from '../assets/logo.jpg'
-import "../index.css";
-import Button from "./UI/Button.js";
+import "../index.css"
+import Button from "./UI/Button.js"
+import { useCart } from "../store/CartContext"
 
 const Header = () => {
+    const { cartItems } = useCart();
 
     return (
         <header id="main-header">
@@ -12,10 +14,12 @@ const Header = () => {
                 <h1>React Food Order App</h1>
             </div>
             <nav>
-                <Button textOnly={true}>Cart (0)</Button>
+                <Button textOnly={true}>
+                    Cart ({cartItems.length})
+                </Button>
             </nav>
         </header>
     )
 }
 
-export default Header
+export default Header;
